@@ -49,6 +49,7 @@ LIMIT 25;
 
 
 -- Making a more concise version of the above.
+SELECT
     skills_dim.skill_id,
     skills_dim.skills,
     COUNT(skills_job_dim.job_id) AS demand_count,

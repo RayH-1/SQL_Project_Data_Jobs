@@ -8,7 +8,6 @@ Question: What are the top skills based on salary?
 
 SELECT 
     skills,
-    COUNT(skills_job_dim.job_id) AS demand_count,
     ROUND(AVG(job_postings_fact.salary_year_avg),0) AS skill_pay_avg
 FROM job_postings_fact
 INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id 
@@ -23,7 +22,6 @@ LIMIT 25;
 -- How does it compare to roles in Germany
 SELECT 
     skills,
-    COUNT(skills_job_dim.job_id) AS demand_count,
     ROUND(AVG(job_postings_fact.salary_year_avg),0) AS skill_pay_avg
 FROM job_postings_fact
 INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id 
